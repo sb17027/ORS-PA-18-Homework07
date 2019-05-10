@@ -15,11 +15,14 @@
 
 # Write your function here
 
-
+def recursiveSum(arr):
+    if len(arr) == 0:
+        return 0
+    else:
+        return arr[0] + recursiveSum(arr[1:])
 
 def main():
-    # Test your function here
-    pass
+    arr = [3, 5, 1, 6]
+    print("Sum is: ", recursiveSum(arr))
 
-if __name__ == "__main__":
 main()

@@ -25,11 +25,37 @@
 
 # Write your class here
 
+class Vehicle:
+    def __init__(self, company, model, yearOfProduction, registrationNumber, enginePower, color):
+        self.company = company
+        self.model = model
+        self.yearOfProduction = yearOfProduction
+        self.registrationNumber = registrationNumber
+        self.enginePower = enginePower
+        self.color = color
+
+    def cost_of_registration(self):
+        result = 0
+        # production year
+        if self.yearOfProduction < 1990:
+            result = 100
+        if self.yearOfProduction < 2000:
+            result = 200
+        if self.yearOfProduction < 2010:
+            result = 300
+        if self.yearOfProduction < 2020:
+            result = 400
+
+        result = result + self.enginePower * 2
+        return result
 
 
 def main():
-    # Test your function here
-    pass
+    v1 = Vehicle("Audi", "A3", 2001, "BR AB123", 1.5, "Black")
+    print(v1.cost_of_registration())
 
-if __name__ == "__main__":
-    main()
+
+main()
+
+
+
